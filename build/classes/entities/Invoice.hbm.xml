@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 25, 2016 9:57:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Invoice" table="invoice" catalog="shop_manager" optimistic-lock="version">
+        <id name="idInvoice" type="java.lang.Integer">
+            <column name="idInvoice" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="entities.Customer" fetch="select">
+            <column name="idCustomer" not-null="true" />
+        </many-to-one>
+        <many-to-one name="employee" class="entities.Employee" fetch="select">
+            <column name="idEmployee" not-null="true" />
+        </many-to-one>
+        <property name="initialDate" type="date">
+            <column name="InitialDate" length="10" not-null="true" />
+        </property>
+        <property name="state" type="string">
+            <column name="State" length="45" />
+        </property>
+        <set name="invoiceDetails" table="invoice_detail" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idInvoice" not-null="true" />
+            </key>
+            <one-to-many class="entities.InvoiceDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

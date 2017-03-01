@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a46b0f84-f489-4683-b21d-884c1e35b578">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="NameCustomer" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     invoice.`idInvoice` AS invoice_idInvoice,
+     invoice.`idEmployee` AS invoice_idEmployee,
+     invoice.`idCustomer` AS invoice_idCustomer,
+     invoice.`InitialDate` AS invoice_InitialDate,
+     invoice.`State` AS invoice_State,
+     customer.`idCustomer` AS customer_idCustomer,
+     customer.`Name` AS customer_Name,
+     customer.`Phone` AS customer_Phone,
+     customer.`DateOfBirth` AS customer_DateOfBirth,
+     employee.`idEmployee` AS employee_idEmployee,
+     employee.`Username` AS employee_Username,
+     employee.`Password` AS employee_Password,
+     employee.`Name` AS employee_Name,
+     employee.`Role` AS employee_Role,
+     employee.`Email` AS employee_Email,
+     employee.`Sex` AS employee_Sex,
+     employee.`Phone` AS employee_Phone,
+     employee.`DateOfBirth` AS employee_DateOfBirth,
+     employee.`Image` AS employee_Image,
+     invoice_detail.`idProduct` AS invoice_detail_idProduct,
+     invoice_detail.`idInvoice` AS invoice_detail_idInvoice,
+     invoice_detail.`Quantity` AS invoice_detail_Quantity,
+     invoice_detail.`Price` AS invoice_detail_Price,
+     invoice_detail.`idDetail` AS invoice_detail_idDetail,
+     product.`idProduct` AS product_idProduct,
+     product.`idManufacturer` AS product_idManufacturer,
+     product.`idCategory` AS product_idCategory,
+     product.`Name` AS product_Name,
+     product.`Quantity` AS product_Quantity,
+     product.`UnitPrice` AS product_UnitPrice,
+     product.`Unit` AS product_Unit,
+     product.`Image` AS product_Image
+FROM
+     `customer` customer INNER JOIN `invoice` invoice ON customer.`idCustomer` = invoice.`idCustomer`
+     INNER JOIN `employee` employee ON invoice.`idEmployee` = employee.`idEmployee`
+     INNER JOIN `invoice_detail` invoice_detail ON invoice.`idInvoice` = invoice_detail.`idInvoice`
+     INNER JOIN `product` product ON invoice_detail.`idProduct` = product.`idProduct`
+WHERE
+     customer.`Name` = $P{NameCustomer}]]>
+	</queryString>
+	<field name="invoice_idInvoice" class="java.lang.Integer"/>
+	<field name="invoice_idEmployee" class="java.lang.Integer"/>
+	<field name="invoice_idCustomer" class="java.lang.Integer"/>
+	<field name="invoice_InitialDate" class="java.sql.Date"/>
+	<field name="invoice_State" class="java.lang.String"/>
+	<field name="customer_idCustomer" class="java.lang.Integer"/>
+	<field name="customer_Name" class="java.lang.String"/>
+	<field name="customer_Phone" class="java.lang.String"/>
+	<field name="customer_DateOfBirth" class="java.sql.Date"/>
+	<field name="employee_idEmployee" class="java.lang.Integer"/>
+	<field name="employee_Username" class="java.lang.String"/>
+	<field name="employee_Password" class="java.lang.String"/>
+	<field name="employee_Name" class="java.lang.String"/>
+	<field name="employee_Role" class="java.lang.String"/>
+	<field name="employee_Email" class="java.lang.String"/>
+	<field name="employee_Sex" class="java.lang.String"/>
+	<field name="employee_Phone" class="java.lang.String"/>
+	<field name="employee_DateOfBirth" class="java.sql.Date"/>
+	<field name="employee_Image" class="java.lang.String"/>
+	<field name="invoice_detail_idProduct" class="java.lang.Integer"/>
+	<field name="invoice_detail_idInvoice" class="java.lang.Integer"/>
+	<field name="invoice_detail_Quantity" class="java.lang.Integer"/>
+	<field name="invoice_detail_Price" class="java.lang.Double"/>
+	<field name="invoice_detail_idDetail" class="java.lang.Integer"/>
+	<field name="product_idProduct" class="java.lang.Integer"/>
+	<field name="product_idManufacturer" class="java.lang.Integer"/>
+	<field name="product_idCategory" class="java.lang.Integer"/>
+	<field name="product_Name" class="java.lang.String"/>
+	<field name="product_Quantity" class="java.lang.Integer"/>
+	<field name="product_UnitPrice" class="java.lang.Double"/>
+	<field name="product_Unit" class="java.lang.String"/>
+	<field name="product_Image" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="228" height="20" uuid="50791003-7ab9-4d65-914a-fe8e6cc33079"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[CÔNG TY CỔ PHẦN BÁN LẺ KỸ THUẬT SỐ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="31" width="66" height="20" uuid="0f32dda0-25f3-4ba8-90d0-f05cda6867cb"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[PRO-FPT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="11" width="284" height="35" uuid="4b103d21-ff66-4395-bfd4-40065e0c7ab0"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[HÓA ĐƠN GIÁ TRỊ GIA TĂNG]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="20" uuid="b300cb7b-b527-4427-8e04-282afd483418"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Khách hàng:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="151" y="0" width="220" height="20" uuid="bed02844-be78-4cc9-9cdf-4677dad765ba"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NameCustomer}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="20" uuid="31bbf75f-b2fa-4986-a7f1-86e651d5829a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Số điện thoại:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="151" y="0" width="237" height="20" uuid="e47b164a-7361-44d6-84fc-79cd68a1ab21"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_Phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="41" width="100" height="20" uuid="53ea9b36-bedd-44fe-a429-e9000428c4ec"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sản phẩm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="41" width="100" height="20" uuid="5bd01e26-e5cd-4e5f-839b-6fb755977fcf"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Số lượng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="41" width="100" height="20" uuid="1b988b59-fc0f-4002-89ba-8ac3a989fbd4"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Đơn giá]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="11" width="120" height="20" uuid="abfb0ebb-bcfd-4b02-852e-eba649de05c4"/>
+				<textFieldExpression><![CDATA[$F{product_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="11" width="147" height="20" uuid="64bc78d7-642a-4bd0-b7fb-3dc78cef8666"/>
+				<textFieldExpression><![CDATA[$F{invoice_detail_Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="11" width="135" height="20" uuid="1a03c9b6-c76a-442d-a125-fae27af45a93"/>
+				<textFieldExpression><![CDATA[$F{invoice_detail_Price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="24" width="100" height="20" uuid="f0e09bcd-e5cd-4901-90ae-68ad95bfc7bf"/>
+				<text><![CDATA[KHÁCH HÀNG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="21" width="100" height="20" uuid="23512d2b-6cff-4b13-ad93-85dfe74b5ef5"/>
+				<text><![CDATA[NHÂN VIÊN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="44" width="100" height="20" uuid="7aa66a7f-3458-49ba-b657-6dbef2df24ca"/>
+				<text><![CDATA[Ký và ghi rỏ họ tên]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="41" width="100" height="20" uuid="a6e7bea3-6099-4222-bea8-ba24081920a1"/>
+				<text><![CDATA[Ký và ghi rỏ họ tên]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="20" uuid="440f1446-4c27-4ed9-9198-06dd34b261c9"/>
+				<text><![CDATA[Tổng giá:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="444" y="0" width="100" height="20" uuid="5fdcb1d1-0b45-4a5c-8550-9b8131ccb164"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

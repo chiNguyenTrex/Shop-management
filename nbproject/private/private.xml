@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/EmployeeManagement.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/model/EmployeeTableModel.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/ProductManagement.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/MainGUI.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/model/ProductTableModel.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/model/CategoryComboboxModel.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/BrandManagement.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/ManagerPanel.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/CashierPanel.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/NewInvoice.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/InvoiceManagement.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/model/MiniProductTableModel.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/Login.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/LoginPanel.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/view/SalePanel.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/model/EmployeeDAO.java</file>
+            <file>file:/F:/Java%20Development/Shop%20Manager/src/model/HibernateUtil.java</file>
+        </group>
+    </open-files>
+</project-private>
